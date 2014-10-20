@@ -11,11 +11,11 @@ vvadd    : 3018/3323   = 0.908
 
 3.
 
-median   : 6871/7421   = 0.926 (9.59% improvement)
-multiply : 21098/21691 = 0.973 (25.5% improvement)
-qsort    : 21626/22847 = 0.947 (3.05% improvement)
-towers   : 9907/10209  = 0.970 (7.66% improvement)
-vvadd    : 3018/3026   = 0.997 (9.80% improvement)
+median   : 6871/7421   = 0.926 (+9.59%)
+multiply : 21098/21691 = 0.973 (+25.5%)
+qsort    : 21626/22847 = 0.947 (+3.05%)
+towers   : 9907/10209  = 0.970 (+7.66%)
+vvadd    : 3018/3026   = 0.997 (+9.80%)
 
 Around a 10% improvement, on average. Overall, very close to IPC of 1.
 
@@ -31,7 +31,14 @@ ras : 410  -> 358  (-12.7%)
 Number of cycles generally decreases.
 
 
-5. 
+5.
 
-6. 
+bht : there are more branches than the BTB can store, so some are overwritten, making some predictions wrong
+btb : total number of branches fits perfectly into BTB, so after a few updates, prediction becomes near perfect
+jal : there are no branches, so everything is PC-4
+j   : similar to jal
+ras : similar concept to btb
+
+
+6. Increase the size of the BTB.
 
